@@ -7,6 +7,7 @@
     { "source": "/ineo", "destination": "/entreprise/Ineo/index.html", "permanent": true },
     { "source": "/actimium", "destination": "/entreprise/Actimium/index.html", "permanent": true },
     { "source": "/smi", "destination": "/entreprise/SMI-AI-Equans-Digital/index.html", "permanent": true },
-    { "source": "/fauche", "destination": "/entreprise/fauché/index.html", "permanent": true }
+    { "source": "/fauche", "destination": "/entreprise/fauché/index.html", "permanent": true },
+    { "source": "/thales", "destination": "/entreprise/thales/index.html", "permanent": true }
   ]
 }
