@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/engie", "destination": "/entreprise/ENGIE/index.html" },
+    { "source": "/cgi", "destination": "/entreprise/CGI/index.html" },
+    { "source": "/eiffage", "destination": "/entreprise/eiffage/index.html" },
+    { "source": "/ineo", "destination": "/entreprise/Ineo/index.html" },
+    { "source": "/actimium", "destination": "/entreprise/Actimium/index.html" },
+    { "source": "/smi", "destination": "/entreprise/SMI-AI-Equans-Digital/index.html" },
+    { "source": "/fauche", "destination": "/entreprise/fauché/index.html" }
+  ]
+}

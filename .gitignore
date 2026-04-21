@@ -1,0 +1,12 @@
+# Gemini / Agent Config
+.agent/
+.gemini/
+antigravity/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+.vscode/

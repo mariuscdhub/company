@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marius Coudurier | Portfolio CV</title>
+    <meta name="description" content="Portfolio de Marius Coudurier, étudiant en génie électrique et informatique industrielle, aspirant Technicien en Automatisme.">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#050505',
+                            card: '#0f0f0f',
+                            accent: '#00f2ff', // Neon Cyan
+                            secondary: '#0077ff',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'glow': 'glow 3s ease-in-out infinite alternate',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px #00f2ff55' },
+                            '100%': { boxShadow: '0 0 20px #00f2ffaa' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            color: #e5e5e5;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+
+        /* --- PREMIUM ANIMATIONS (REACT BITS STYLE) --- */
+
+        /* 1. Spotlight Effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .spotlight-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(0, 242, 255, 0.1), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .spotlight-card:hover::before {
+            opacity: 1;
+        }
+
+        /* 2. Aurora Background Animations */
+        @keyframes fluidAurora {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.6; }
+            33% { transform: translate(3vw, -5vh) scale(1.1) rotate(5deg); opacity: 0.8; }
+            66% { transform: translate(-2vw, 3vh) scale(0.9) rotate(-3deg); opacity: 0.6; }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.6; }
+        }
+
+        .aurora-blob {
+            animation: fluidAurora 20s infinite ease-in-out alternate;
+        }
+        .aurora-blob-2 {
+            animation: fluidAurora 25s infinite ease-in-out alternate-reverse;
+        }
+
+        /* 3. Blur Text Reveal */
+        .split-text-wrap {
+            display: inline-block;
+            overflow: hidden;
+            padding-bottom: 5px;
+        }
+        .blur-char {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(12px);
+            transform: translateY(15px);
+            animation: cinematicReveal 0.8s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+        }
+        @keyframes cinematicReveal {
+            to {
+                opacity: 1;
+                filter: blur(0);
+                transform: translateY(0);
+            }
+        }
+
+        /* 4. Magnetic & Shiny Button */
+        .magnetic-wrap {
+            display: inline-block;
+        }
+        .shiny-btn {
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .shiny-btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: skewX(-20deg);
+        }
+        .shiny-btn:hover::after {
+            animation: shineSweep 1.5s infinite;
+        }
+        @keyframes shineSweep {
+            100% { left: 200%; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Background Decor (Aurora Interactive) -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+        <div class="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-accent/10 blur-[100px] aurora-blob"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-secondary/15 blur-[120px] aurora-blob-2"></div>
+        <div class="absolute top-40 left-1/2 w-[40vw] h-[40vw] rounded-full bg-white/5 blur-[100px] aurora-blob" style="animation-duration: 30s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-20" style="background-image: radial-gradient(#ffffff11 1px, transparent 1px); background-size: 40px 40px;"></div>
+    </div>
+
+    <!-- Navigation Dots (Vertical) -->
+    <nav class="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-50 hidden md:flex text-right">
+        <a href="#hero" class="section-dot w-2 h-2 rounded-full bg-white/20 hover:bg-white/50" title="Accueil"></a>
+        <a href="#experiences" class="section-dot w-2 h-2 rounded-full bg-white/20 hover:bg-white/50" title="Expériences"></a>
+        <a href="#formations" class="section-dot w-2 h-2 rounded-full bg-white/20 hover:bg-white/50" title="Projets"></a>
+        <a href="#diplomes" class="section-dot w-2 h-2 rounded-full bg-white/20 hover:bg-white/50" title="Diplômes"></a>
+        <a href="#competences" class="section-dot w-2 h-2 rounded-full bg-white/20 hover:bg-white/50" title="Compétences"></a>
+        <a href="#interets" class="section-dot w-2 h-2 rounded-full bg-white/20 hover:bg-white/50" title="Intérêts"></a>
+    </nav>
+
+    <!-- Mobile Header -->
+    <header class="md:hidden fixed top-0 left-0 w-full z-40 p-4 flex justify-between items-center glass">
+        <span class="font-display font-bold text-brand-accent glow-text">M. COUDURIER</span>
+        <button class="text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-24">
+        <div class="flex flex-col lg:flex-row gap-12 lg:items-start">
+            
+            <!-- Sticky Presentation Card (Desktop) -->
+            <aside class="lg:sticky lg:top-24 w-full lg:w-1/3 space-y-8 animate-in fade-in duration-1000">
+                <div class="glass p-8 rounded-[2.5rem] border-white/10 relative overflow-hidden group">
+                    <div class="absolute -top-12 -right-12 w-24 h-24 bg-brand-accent/20 rounded-full blur-2xl group-hover:bg-brand-accent/40 transition-all"></div>
+                    
+                    <div class="relative z-10 space-y-6">
+                        <div class="w-32 h-32 mx-auto rounded-3xl border-2 border-brand-accent/30 flex items-center justify-center overflow-hidden">
+                            <!-- User Photo -->
+                            <img src="data/1770931342969.jpg" alt="Marius Coudurier" class="w-full h-full object-cover">
+                        </div>
+                        
+                        <div class="text-center space-y-2">
+                            <h1 class="text-3xl font-display font-bold text-white">Marius <span class="text-brand-accent">Coudurier</span></h1>
+                            <p class="text-brand-accent text-sm font-bold tracking-widest uppercase">Recherche Alternance Technicien Automatisme</p>
+                        </div>
+
+                        <div class="space-y-4 pt-6 border-t border-white/5">
+                            <!-- Contact Info -->
+                            <div class="flex items-center gap-3 text-sm text-gray-400">
+                                <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </div>
+                                marius.coudurier.1423@gmail.com
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-gray-400">
+                                <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </div>
+                                06.49.55.98.96
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-gray-400">
+                                <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="18" r="2"/></svg>
+                                </div>
+                                Permis B
+                            </div>
+                            <a href="https://www.linkedin.com/in/marius-coudurier-092725316" target="_blank" class="flex items-center gap-3 text-sm text-gray-400 hover:text-brand-accent transition-colors">
+                                <div class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center text-brand-accent">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                </div>
+                                LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="pt-6 grid grid-cols-2 gap-4">
+                            <button onclick="downloadDocs()" class="shiny-btn py-4 text-center bg-brand-accent text-brand-dark font-bold rounded-2xl hover:shadow-[0_0_20px_#00f2ff55] transition-all text-sm">
+                                CV + Lettre
+                            </button>
+                            <a href="mailto:marius.coudurier.1423@gmail.com" class="shiny-btn py-4 text-center glass border-white/10 text-white font-bold rounded-2xl hover:bg-white/5 transition-all text-sm">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Sections -->
+            <div class="flex-1 space-y-32">
+                
+                <!-- Hero Section -->
+                <section id="hero" class="min-h-[70vh] flex flex-col justify-center space-y-8 animate-in fade-in duration-1000">
+                    <div class="space-y-4">
+                        <h2 class="text-4xl md:text-7xl font-display font-bold tracking-tight split-reveal-title">
+                            L'Automatisme au service de <span class="text-brand-accent glow-text">l'Innovation.</span>
+                        </h2>
+                        <p class="text-xl md:text-2xl text-gray-400 font-light max-w-2xl">
+                            Étudiant GEII passionné par la mécatronique, l'électronique embarquée et la conception industrielle.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#experiences" class="px-6 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-brand-accent hover:text-brand-dark transition-all font-bold">Voir mon parcours</a>
+                        <div class="flex items-center gap-4 px-4 py-2 text-gray-500 italic text-sm border-l-2 border-brand-accent/30">
+                            "Curieux, rigoureux et autonome."
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experiences Section -->
+                <section id="experiences" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold">Expériences <span class="text-brand-accent">Professionnelles</span></h2>
+                <span class="text-gray-500 uppercase tracking-widest text-sm">Industrial Expertise</span>
+            </div>
+
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- Annet Blanchisserie -->
+                <div class="glass spotlight-card p-8 rounded-2xl space-y-4 hover:border-brand-accent/50 transition-colors group">
+                    <div class="flex justify-between items-start relative z-10">
+                        <h3 class="text-xl font-bold group-hover:text-brand-accent transition-colors">Ouvrier de Production</h3>
+                        <span class="text-xs px-2 py-1 rounded bg-brand-accent/10 text-brand-accent border border-brand-accent/20">07/2025 – 08/2025</span>
+                    </div>
+                    <p class="text-gray-300 font-medium">Annet Blanchisserie</p>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Gestion du flux textile</li>
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Respect des cadences de production</li>
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Normes d'hygiène et de sécurité</li>
+                    </ul>
+                </div>
+
+                <!-- LIEBHERR -->
+                <div class="glass spotlight-card p-8 rounded-2xl space-y-4 hover:border-brand-accent/50 transition-colors group">
+                    <div class="flex justify-between items-start relative z-10">
+                        <h3 class="text-xl font-bold group-hover:text-brand-accent transition-colors">Agent de Manutention</h3>
+                        <span class="text-xs px-2 py-1 rounded bg-brand-accent/10 text-brand-accent border border-brand-accent/20">08/2023</span>
+                    </div>
+                    <p class="text-gray-300 font-medium">LIEBHERR</p>
+                    <ul class="text-gray-400 space-y-2 text-sm">
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Destockage et démontage de structures de stockage</li>
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Réorganisation des locaux</li>
+                    </ul>
+                </div>
+
+                <!-- Bénévolat FCPE -->
+                <div class="glass spotlight-card p-8 rounded-2xl space-y-4 hover:border-brand-accent/50 transition-colors group md:col-span-2">
+                    <div class="flex justify-between items-start relative z-10">
+                        <h3 class="text-xl font-bold group-hover:text-brand-accent transition-colors">Bénévolat</h3>
+                        <span class="text-xs px-2 py-1 rounded bg-brand-accent/10 text-brand-accent border border-brand-accent/20">07/ 2023</span>
+                    </div>
+                    <p class="text-gray-300 font-medium">FCPE - Lycée A. KASTLER</p>
+                    <ul class="text-gray-400 space-y-2 text-sm grid md:grid-cols-2 gap-x-4">
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Accueil des élèves</li>
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Préparation des commandes</li>
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Suivi des stocks</li>
+                        <li class="flex gap-2"><span class="text-brand-accent">•</span> Encaissements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formations & Projets Section -->
+        <section id="formations" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold">Projets & <span class="text-brand-accent">Réalisations</span></h2>
+                <span class="text-gray-500 uppercase tracking-widest text-sm">Innovation & Engineering</span>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-3">
+                <!-- CalTracker (SaaS IA) -->
+                <div class="md:col-span-2 spotlight-card glass p-8 rounded-[2.5rem] border-white/5 relative overflow-hidden group hover:border-brand-accent/30 transition-all">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                    <div class="relative z-10 flex flex-col md:flex-row gap-8">
+                        <div class="w-full md:w-1/2 aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:border-brand-accent/20 transition-all">
+                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000&auto=format&fit=crop" alt="CalTracker" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="w-full md:w-1/2 space-y-4">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-1 rounded bg-brand-accent/10 text-brand-accent text-[10px] font-bold uppercase">SaaS IA</span>
+                                <span class="text-xs text-gray-500 italic">2026</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white group-hover:text-brand-accent transition-colors">CalTracker</h3>
+                            <p class="text-sm text-gray-400 leading-relaxed">
+                                Dashboard de suivi nutritionnel intelligent (SaaS). Reconnaissance visuelle par IA, scanner de codes-barres et dashboard analytique "Data-First".
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-[10px] text-gray-400 font-mono">Next.js 16</span>
+                                <span class="text-[10px] text-gray-400 font-mono">Vercel AI SDK</span>
+                                <span class="text-[10px] text-gray-400 font-mono">TypeScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Robot Sumo -->
+                <div class="flex flex-col space-y-4">
+                    <div class="aspect-square bg-gradient-to-br from-brand-accent/5 to-brand-secondary/5 rounded-2xl border border-white/5 flex items-center justify-center p-6 glass hover:scale-[1.02] transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><rect width="18" height="10" x="3" y="11" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" x2="8" y1="16" y2="16"/><line x1="16" x2="16" y1="16" y2="16"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Robot Sumo Autonome</h4>
+                        <p class="text-sm text-gray-400 mt-2">Conception mécatronique (Solidworks) & programmation C++. Gestion capteurs ultrasons/infrarouges.</p>
+                    </div>
+                </div>
+
+                <!-- Système Embarqué -->
+                <div class="flex flex-col space-y-4">
+                    <div class="aspect-square bg-gradient-to-br from-brand-accent/5 to-brand-secondary/5 rounded-2xl border border-white/5 flex items-center justify-center p-6 glass hover:scale-[1.02] transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Thermomètre d'Entreprise</h4>
+                        <p class="text-sm text-gray-400 mt-2">Conception complète de carte électronique : schémas, routage PCB sous Proteus et soudure CMS.</p>
+                    </div>
+                </div>
+
+                <!-- Casiers RFID -->
+                <div class="flex flex-col space-y-4">
+                    <div class="aspect-square bg-gradient-to-br from-brand-accent/5 to-brand-secondary/5 rounded-2xl border border-white/5 flex items-center justify-center p-6 glass hover:scale-[1.02] transition-transform">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 12h18"/><path d="M12 3v18"/></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Casiers Sécurisés RFID</h4>
+                        <p class="text-sm text-gray-400 mt-2">Système de gestion d'accès par badge. Décodage RFID et modélisation 3D du verrouillage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Maker & Personal -->
+            <div class="glass p-8 rounded-3xl mt-12 bg-gradient-to-r from-brand-accent/10 to-transparent border-brand-accent/20">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="p-3 rounded-xl bg-brand-accent/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wrench text-brand-accent"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold font-display">Ingénierie Maker & Passion</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-sm">
+                    <div class="space-y-2">
+                        <span class="text-brand-accent font-bold">Domotique & Ambilight</span>
+                        <p class="text-gray-400">Rénovation d'installations électriques, optimisation énergétique et scénarios automatisés pilotables à distance. Système Ambilight maison (Microcontrôleur & Soudure).</p>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-brand-accent font-bold">Upcycling Audio</span>
+                        <p class="text-gray-400">Rénovation d'enceintes connectées. Travail du bois (Menuiserie), Design & Intégration électronique.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <span class="text-brand-accent font-bold">Création Artistique</span>
+                        <p class="text-gray-400">Composition musicale, dessin technique et création de contenus multimédias numériques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diplômes Section -->
+        <section id="diplomes" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold">Diplômes & <span class="text-brand-accent">Qualifications</span></h2>
+                <span class="text-gray-500 uppercase tracking-widest text-sm">Academic Journey</span>
+            </div>
+
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h3 class="text-xl font-bold">BUT Génie Électrique et Informatique Industrielle</h3>
+                        <p class="text-brand-accent font-medium">1ère année - Parcours Automatisme et Informatique Industrielle</p>
+                    </div>
+                    <span class="text-sm font-bold text-gray-500 italic">En cours</span>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div>
+                        <h3 class="text-xl font-bold">Baccalauréat STI2D</h3>
+                        <p class="text-brand-accent font-medium">Sciences et Technologies de l’Industrie et du Développement Durable</p>
+                    </div>
+                    <div class="text-right text-sm">
+                        <span class="block font-bold">2025</span>
+                        <span class="px-2 py-0.5 rounded bg-brand-accent/20 text-brand-accent text-xs font-bold">Mention Bien</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competences Section -->
+        <section id="competences" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold">Expertise <span class="text-brand-accent">Technique</span></h2>
+                <span class="text-gray-500 uppercase tracking-widest text-sm">Skills & Artifacts</span>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center gap-4 hover:bg-white/5 transition-all">
+                    <div class="text-brand-accent font-bold text-lg italic uppercase">TIA Portal</div>
+                    <span class="text-[10px] text-gray-500 uppercase">Automation Siemens</span>
+                </div>
+                <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center gap-4 hover:bg-white/5 transition-all">
+                    <div class="text-brand-accent font-bold text-lg italic uppercase">Proteus ISIS/ARES</div>
+                    <span class="text-[10px] text-gray-500 uppercase">Simulation & PCB</span>
+                </div>
+                <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center gap-4 hover:bg-white/5 transition-all">
+                    <div class="text-brand-accent font-bold text-lg italic uppercase">Arduino / RFID</div>
+                    <span class="text-[10px] text-gray-500 uppercase">Systèmes Embarqués</span>
+                </div>
+                <div class="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center gap-4 hover:bg-white/5 transition-all">
+                    <div class="text-brand-accent font-bold text-lg italic uppercase">Solidworks</div>
+                    <span class="text-[10px] text-gray-500 uppercase">Modélisation 3D</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 pt-8">
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
+                        Logiciels & Projets
+                    </h4>
+                    <ul class="text-sm text-gray-400 space-y-2 italic">
+                        <li>• Microsoft Excel (Gantt & Chiffrage)</li>
+                        <li>• Langage C / C++ / Web (Next.js)</li>
+                        <li>• IA & Automatisation industrielle</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        Savoir-faire Manuel
+                    </h4>
+                    <ul class="text-sm text-gray-400 space-y-2 italic">
+                        <li>• Électricité domestique</li>
+                        <li>• Lecture de schémas industriels</li>
+                        <li>• Utilisation d'outillage de bricolage</li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><path d="m5 8 6 6 6-6"/><path d="m5 12 6 6 6-6"/></svg>
+                        Langues
+                    </h4>
+                    <ul class="text-sm text-gray-400 space-y-2 italic">
+                        <li>• Français : Natif</li>
+                        <li>• Anglais : Niveau B2</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Centres d'intérêt Section -->
+        <section id="interets" class="space-y-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold">Centres d'<span class="text-brand-accent">Intérêt</span></h2>
+                <span class="text-gray-500 uppercase tracking-widest text-sm">Passions & Hobbies</span>
+            </div>
+
+            <div class="flex flex-wrap gap-4">
+                <div class="glass px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-brand-accent/30 transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>
+                    </div>
+                    <span class="font-medium">Pâtisserie & Cuisine</span>
+                </div>
+                <div class="glass px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-brand-accent/30 transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    </div>
+                    <span class="font-medium">Écouter & Créer de la Musique</span>
+                </div>
+                <div class="glass px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-brand-accent/30 transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4 4 4-4 4-4-4Z"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.71-2.16 0-3-.71-.84-2.29-.84-3 0Z"/><path d="m13.48 3.77a2.3 2.3 0 1 1 3.25 3.25L7 16.73c-1.12 1.12-2.73 1.4-3.77.36s-.76-2.65.36-3.77L13.48 3.77Z"/></svg>
+                    </div>
+                    <span class="font-medium">Domotique & Électronique</span>
+                </div>
+                <div class="glass px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-brand-accent/30 transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
+                    </div>
+                    <span class="font-medium">Activités Sportives Assidues</span>
+                </div>
+                <div class="glass px-6 py-4 rounded-2xl flex items-center gap-4 hover:border-brand-accent/30 transition-all group">
+                    <div class="w-10 h-10 rounded-full bg-brand-accent/10 flex items-center justify-center text-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <span class="font-medium">Lecture</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-24 flex flex-col items-center text-center space-y-8 glass rounded-[3rem] border-brand-accent/20">
+            <h2 class="text-3xl md:text-4xl font-display font-bold">Prêt pour une nouvelle <span class="text-brand-accent">collaboration ?</span></h2>
+            <p class="text-gray-400 max-w-lg">Je suis activement à la recherche d'une alternance pour mettre mes compétences en automatisme et génie électrique à profit.</p>
+            <div class="flex gap-4">
+                <div class="magnetic-wrap">
+                    <a href="mailto:marius.coudurier.1423@gmail.com" class="shiny-btn px-8 py-3 bg-brand-accent text-brand-dark font-bold rounded-xl hover:scale-105 transition-transform flex items-center justify-center">Me Contacter</a>
+                </div>
+                <div class="magnetic-wrap">
+                    <button onclick="downloadDocs()" class="shiny-btn px-8 py-3 glass border-white/10 rounded-xl hover:bg-white/5 transition-all flex items-center justify-center cursor-pointer">CV + Lettre de Motivation (PDF)</button>
+                </div>
+            </div>
+        </section>
+            </div> <!-- Close flex-1 -->
+        </div> <!-- Close Main Grid -->
+    </main>
+
+    <footer class="py-12 text-center text-gray-600 text-sm border-t border-white/5 mt-32">
+        <p>© 2026 Marius Coudurier - Portfolio Conçu pour l'excellence technique</p>
+    </footer>
+
+    <script>
+        // Simple Scroll Animation Logic
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    
+                    // Update navigation dots
+                    const id = entry.target.getAttribute('id');
+                    document.querySelectorAll('.section-dot').forEach(dot => {
+                        if (dot.getAttribute('href') === `#${id}`) {
+                            dot.classList.add('active-dot');
+                        } else {
+                            dot.classList.remove('active-dot');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        /* --- SCRIPT D'ANIMATIONS (REACT BITS STYLE) --- */
+
+        // 1. BLUR TEXT REVEAL
+        document.addEventListener("DOMContentLoaded", () => {
+            const splitTitle = document.querySelector('.split-reveal-title');
+            if(splitTitle) {
+                const words = splitTitle.innerText.split(' ');
+                splitTitle.innerHTML = '';
+                
+                words.forEach((word, wordIndex) => {
+                    const wordSpan = document.createElement('span');
+                    wordSpan.className = 'split-text-wrap mr-3'; 
+                    
+                    const chars = word.split('');
+                    chars.forEach((char, charIndex) => {
+                        const charSpan = document.createElement('span');
+                        charSpan.className = 'blur-char';
+                        charSpan.innerText = char;
+                        const delay = (wordIndex * 0.1) + (charIndex * 0.03);
+                        charSpan.style.animationDelay = `${delay}s`;
+                        wordSpan.appendChild(charSpan);
+                    });
+                    
+                    splitTitle.appendChild(wordSpan);
+                });
+            }
+
+            // 2. SPOTLIGHT CARDS
+            document.querySelectorAll('.spotlight-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+
+            // 3. MAGNETIC BUTTONS
+            const magneticElements = document.querySelectorAll('.magnetic-wrap');
+            magneticElements.forEach(elem => {
+                const btn = elem.querySelector('.shiny-btn');
+                
+                elem.addEventListener('mousemove', (e) => {
+                    const rect = elem.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+                    
+                    const distanceX = e.clientX - centerX;
+                    const distanceY = e.clientY - centerY;
+                    
+                    const maxMove = 15;
+                    const moveX = (distanceX / rect.width) * maxMove;
+                    const moveY = (distanceY / rect.height) * maxMove;
+                    
+                    btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
+                });
+                
+                elem.addEventListener('mouseleave', () => {
+                    btn.style.transform = `translate(0px, 0px)`;
+                });
+            });
+        });
+
+        function downloadDocs() {
+            // 1. Ouverture IMMÉDIATE de la lettre de motivation dans un nouvel onglet
+            // Note: Pour l'index général, on utilise par défaut la lettre Actimium ou une lettre générique si disponible.
+            window.open('data/Actmium.pdf', '_blank');
+
+            // 2. Lancement du téléchargement du CV juste après
+            const cvLink = document.createElement('a');
+            cvLink.href = 'data/Copie de CV2.pdf';
+            cvLink.download = 'CV_Marius_Coudurier.pdf';
+            document.body.appendChild(cvLink);
+            cvLink.click();
+            document.body.removeChild(cvLink);
+        }
+    </script>
+</body>
+</html>
