@@ -609,30 +609,20 @@
         /* --- SCRIPT D'ANIMATIONS (REACT BITS STYLE) --- */
 
         function downloadDocs() {
-            const docs = [
-                {
-                    url: '../../data/ineo lettre de motivaiton.pdf',
-                    name: 'Lettre_Motivation_Marius_Coudurier.pdf'
-                },
-                {
-                    url: '../../data/Copie de CV2.pdf',
-                    name: 'CV_Marius_Coudurier.pdf'
-                }
-            ];
+            // Contournement du blocage de téléchargements multiples :
+            // On télécharge la lettre normalement, et on ouvre le CV dans un nouvel onglet.
+            
+            const letterLink = document.createElement('a');
+            letterLink.href = '../../data/ineo lettre de motivaiton.pdf';
+            letterLink.download = 'Lettre_Motivation_Marius_Coudurier.pdf';
+            document.body.appendChild(letterLink);
+            letterLink.click();
+            document.body.removeChild(letterLink);
 
-            docs.forEach((doc, index) => {
-                setTimeout(() => {
-                    const link = document.createElement('a');
-                    link.href = doc.url;
-                    link.download = doc.name;
-                    link.style.display = 'none';
-                    document.body.appendChild(link);
-                    link.click();
-                    setTimeout(() => {
-                        document.body.removeChild(link);
-                    }, 100);
-                }, index * 300); // Small 300ms gap between downloads
-            });
+            // Ouvrir le CV dans un nouvel onglet
+            setTimeout(() => {
+                window.open('../../data/Copie de CV2.pdf', '_blank');
+            }, 200);
         }
 
         // 1. BLUR TEXT REVEAL
