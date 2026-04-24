@@ -773,23 +773,30 @@
 
     <script>
         function downloadDocs() {
-            // 1. Lancement du téléchargement de la lettre de motivation
-            const letterLink = document.createElement('a');
-            letterLink.href = '../../data/Actmium.pdf';
-            letterLink.download = 'Lettre_Motivation_Marius_Coudurier.pdf';
-            document.body.appendChild(letterLink);
-            letterLink.click();
-            document.body.removeChild(letterLink);
+            const docs = [
+                {
+                    url: '../../data/Actmium.pdf',
+                    name: 'Lettre_Motivation_Marius_Coudurier.pdf'
+                },
+                {
+                    url: '../../data/Copie de CV2.pdf',
+                    name: 'CV_Marius_Coudurier.pdf'
+                }
+            ];
 
-            // 2. Lancement du téléchargement du CV juste après
-            setTimeout(() => {
-                const cvLink = document.createElement('a');
-                cvLink.href = '../../data/Copie de CV2.pdf';
-                cvLink.download = 'CV_Marius_Coudurier.pdf';
-                document.body.appendChild(cvLink);
-                cvLink.click();
-                document.body.removeChild(cvLink);
-            }, 500);
+            docs.forEach((doc, index) => {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = doc.url;
+                    link.download = doc.name;
+                    link.style.display = 'none';
+                    document.body.appendChild(link);
+                    link.click();
+                    setTimeout(() => {
+                        document.body.removeChild(link);
+                    }, 100);
+                }, index * 300); // Small 300ms gap between downloads
+            });
         }
 
         // Simple Scroll Animation Logic
