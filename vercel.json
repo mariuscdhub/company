@@ -9,6 +9,12 @@
     { "source": "/smi", "destination": "/entreprise/SMI-AI-Equans-Digital/index.html", "permanent": true },
     { "source": "/fauche", "destination": "/entreprise/fauché/index.html", "permanent": true },
     { "source": "/thales", "destination": "/entreprise/thales/index.html", "permanent": true },
-    { "source": "/saft", "destination": "/entreprise/saft/index.html", "permanent": true }
+    { "source": "/saft", "destination": "/entreprise/saft/index.html", "permanent": true },
+    { "source": "/ace2i", "destination": "/entreprise/ace2i/index.html", "permanent": true },
+    { "source": "/iisb", "destination": "/entreprise/iisb/index.html", "permanent": true },
+    { "source": "/lamatherm", "destination": "/entreprise/lamatherm/index.html", "permanent": true },
+    { "source": "/sasp", "destination": "/entreprise/sasp/index.html", "permanent": true },
+    { "source": "/suez", "destination": "/entreprise/suez/index.html", "permanent": true },
+    { "source": "/technic-achat", "destination": "/entreprise/technic-achat/index.html", "permanent": true }
   ]
 }
