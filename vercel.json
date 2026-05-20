@@ -15,6 +15,7 @@
     { "source": "/lamatherm", "destination": "/entreprise/lamatherm/index.html", "permanent": true },
     { "source": "/sasp", "destination": "/entreprise/sasp/index.html", "permanent": true },
     { "source": "/suez", "destination": "/entreprise/suez/index.html", "permanent": true },
-    { "source": "/technic-achat", "destination": "/entreprise/technic-achat/index.html", "permanent": true }
+    { "source": "/technic-achat", "destination": "/entreprise/technic-achat/index.html", "permanent": true },
+    { "source": "/e2m", "destination": "/entreprise/e2m/index.html", "permanent": true }
   ]
 }

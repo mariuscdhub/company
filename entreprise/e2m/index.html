@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marius Coudurier | Portfolio Fauché</title>
-    <meta name="description" content="Dossier de candidature de Marius Coudurier personnalisé pour Fauché.">
+    <title>Marius Coudurier | Candidature Groupe E2M</title>
+    <meta name="description" content="Dossier de candidature de Marius Coudurier personnalisé pour le Groupe E2M.">
     <!-- Google Fonts: Outfit (Alternative for Omnes Pro) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -18,20 +18,21 @@
                 extend: {
                     colors: {
                         brand: {
-                            blue: '#194196', // Accent
-                            secondary: '#1863DC', // Secondary
-                            accent: '#0096AA', // Primary
-                            text: '#194196',
+                            dark: '#111111', // Charcoal black from logo
+                            primary: '#1e382b', // Deep forest green for high contrast
+                            accent: '#86bd2c', // Official Groupe E2M Lime Green
+                            text: '#1e382b',
                             bg: '#FFFFFF',
-                            light: '#F4F7FA'
+                            light: '#F3F6F3' // Light sage/gray background
                         }
                     },
                     fontFamily: {
                         sans: ['Outfit', 'Arial', 'sans-serif'],
                         display: ['Outfit', 'Arial', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
                     },
                     borderRadius: {
-                        'brand': '6px', // Geometric professional look
+                        'brand': '12px', // Modern sleek rounded style
                     }
                 }
             }
@@ -40,7 +41,7 @@
     <style>
         body {
             background-color: #FFFFFF;
-            color: #194196;
+            color: #1e382b;
             font-size: 18px; /* Standardize body to 18px */
             font-family: 'Outfit', sans-serif;
         }
@@ -64,16 +65,16 @@
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
-            background: #194196;
+            background: #1e382b;
             border-radius: 6px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #1863DC;
+            background: #86bd2c;
         }
 
         .hover-glow:hover {
-            box-shadow: 0 0 20px rgba(0, 150, 170, 0.15);
-            border-color: rgba(0, 150, 170, 0.3);
+            box-shadow: 0 0 20px rgba(134, 189, 44, 0.15);
+            border-color: rgba(134, 189, 44, 0.3);
             transform: translateY(-2px);
         }
 
@@ -83,9 +84,9 @@
         .glass {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(0, 36, 57, 0.08);
+            border: 1px solid rgba(30, 56, 43, 0.08);
             border-radius: 17px;
-            box-shadow: 0 8px 32px -4px rgba(0, 36, 57, 0.05);
+            box-shadow: 0 8px 32px -4px rgba(30, 56, 43, 0.05);
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease, border-color 0.3s ease;
@@ -98,7 +99,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(112, 189, 149, 0.08), transparent 40%);
+            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(134, 189, 44, 0.08), transparent 40%);
             opacity: 0;
             transition: opacity 0.5s ease;
             pointer-events: none;
@@ -169,17 +170,32 @@
         @keyframes shineSweep {
             100% { left: 200%; }
         }
+
+        /* Nav Dot Active State styling */
+        .section-dot.active-dot {
+            background-color: #86bd2c !important;
+            transform: scale(1.3);
+            border-color: #1e382b;
+        }
+        .section-dot {
+            background-color: rgba(30, 56, 43, 0.2);
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .section-dot:hover {
+            background-color: #86bd2c;
+        }
     </style>
 </head>
 
-<body class="font-sans antialiased text-brand-text">
+<body class="font-sans antialiased text-brand-dark">
     <!-- Background Decor (Aurora Interactive) -->
     <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
-        <div class="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-secondary/10 blur-[100px] aurora-blob"></div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-accent/15 blur-[120px] aurora-blob-2"></div>
-        <div class="absolute top-40 left-1/2 w-[40vw] h-[40vw] rounded-full bg-brand-blue/5 blur-[100px] aurora-blob" style="animation-duration: 30s;"></div>
+        <div class="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-accent/10 blur-[100px] aurora-blob"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-brand-light blur-[120px] aurora-blob-2"></div>
+        <div class="absolute top-40 left-1/2 w-[40vw] h-[40vw] rounded-full bg-brand-primary/5 blur-[100px] aurora-blob" style="animation-duration: 30s;"></div>
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-5"
-            style="background-image: radial-gradient(#002439 1px, transparent 1px); background-size: 30px 30px;">
+            style="background-image: radial-gradient(#1e382b 1px, transparent 1px); background-size: 30px 30px;">
         </div>
     </div>
 
@@ -195,8 +211,8 @@
 
     <!-- Mobile Header -->
     <header class="md:hidden fixed top-0 left-0 w-full z-40 p-4 flex justify-between items-center glass">
-        <span class="font-bold text-brand-blue uppercase tracking-tighter">M. COUDURIER</span>
-        <button class="text-brand-blue">
+        <span class="font-bold text-brand-primary uppercase tracking-tighter">M. COUDURIER</span>
+        <button class="text-brand-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" x2="20" y1="12" y2="12" />
@@ -211,48 +227,53 @@
 
             <!-- Sticky Presentation Card (Desktop) -->
             <aside class="lg:sticky lg:top-24 w-full lg:w-1/3 space-y-8 animate-in fade-in duration-1000">
-                <div class="glass p-8 border-brand-blue/10 relative overflow-hidden group">
-                    <div class="absolute top-0 left-0 w-full h-2 bg-brand-secondary"></div>
+                <div class="glass p-8 border-brand-primary/10 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-brand-accent"></div>
 
                     <div class="relative z-10 space-y-6">
-                        <div class="w-32 h-32 mx-auto rounded-brand border-2 border-brand-blue/30 flex items-center justify-center overflow-hidden">
+                        <div class="w-full py-4 flex justify-center">
+                            <!-- E2M Official Logo -->
+                            <img src="../../data/groupe_e2m_logo.png" alt="Groupe E2M Logo" class="h-12 object-contain">
+                        </div>
+                        
+                        <div class="w-32 h-32 mx-auto rounded-brand border-2 border-brand-primary/30 flex items-center justify-center overflow-hidden">
                             <!-- User Photo -->
                             <img src="../../data/1770931342969.jpg" alt="Marius Coudurier" class="w-full h-full object-cover">
                         </div>
 
                         <div class="text-center space-y-2">
-                            <h1 class="text-3xl font-black text-brand-blue">Marius <span class="text-brand-secondary">Coudurier</span></h1>
-                            <p class="text-brand-blue font-bold tracking-widest uppercase text-xs">Recherche Alternance Technicien Automatisme</p>
+                            <h1 class="text-3xl font-black text-brand-primary">Marius <span class="text-brand-accent">Coudurier</span></h1>
+                            <p class="text-brand-primary font-bold tracking-widest uppercase text-xs">Recherche Alternance Technicien Automatisme & GTB</p>
                         </div>
 
                         <div class="space-y-4 pt-6 border-t border-gray-100">
                             <!-- Contact Info -->
-                            <div class="flex items-center gap-3 text-sm text-brand-text font-semibold">
-                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-secondary">
+                            <div class="flex items-center gap-3 text-sm text-brand-primary font-semibold">
+                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                                 </div>
                                 marius.coudurier.1423@gmail.com
                             </div>
-                            <div class="flex items-center gap-3 text-sm text-brand-text font-semibold">
-                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-secondary">
+                            <div class="flex items-center gap-3 text-sm text-brand-primary font-semibold">
+                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
                                 </div>
                                 06.49.55.98.96
                             </div>
-                            <div class="flex items-center gap-3 text-sm text-brand-text font-semibold">
-                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-secondary">
+                            <div class="flex items-center gap-3 text-sm text-brand-primary font-semibold">
+                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="18" r="2"/></svg>
                                 </div>
                                 Permis B
                             </div>
-                            <a href="https://mariuscdhub.github.io/portfolio-site/" target="_blank" class="flex items-center gap-3 text-sm text-brand-text font-semibold hover:text-brand-secondary transition-colors">
-                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-secondary">
+                            <a href="https://mariuscdhub.github.io/portfolio-site/" target="_blank" class="flex items-center gap-3 text-sm text-brand-primary font-semibold hover:text-brand-accent transition-colors">
+                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
                                 </div>
                                 Portfolio en ligne
                             </a>
-                            <a href="https://www.linkedin.com/in/marius-coudurier-092725316" target="_blank" class="flex items-center gap-3 text-sm text-brand-text font-semibold hover:text-brand-secondary transition-colors mt-2">
-                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-secondary">
+                            <a href="https://www.linkedin.com/in/marius-coudurier-092725316" target="_blank" class="flex items-center gap-3 text-sm text-brand-primary font-semibold hover:text-brand-accent transition-colors mt-2">
+                                <div class="w-8 h-8 rounded-brand bg-brand-light flex items-center justify-center text-brand-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
                                 </div>
                                 LinkedIn
@@ -269,29 +290,29 @@
                 <section id="hero" class="min-h-[70vh] flex flex-col justify-center space-y-8 animate-in fade-in duration-1000">
                     <div class="space-y-4">
                         <div class="flex flex-wrap gap-2">
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-blue/5 border border-brand-blue/10 text-brand-blue text-[10px] font-black uppercase tracking-widest">
-                                Dossier Candidature Fauché
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/5 border border-brand-primary/10 text-brand-primary text-[10px] font-black uppercase tracking-widest">
+                                Candidature Alternance — Groupe E2M
                             </div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-secondary text-white text-[10px] font-black uppercase tracking-widest shadow-sm">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accent text-brand-primary text-[10px] font-black uppercase tracking-widest shadow-sm">
                                 <span class="relative flex h-2 w-2">
-                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-primary opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-primary"></span>
                                 </span>
-                                CV Interactif en ligne
+                                Spécialité : GTB & Automatisme du Bâtiment
                             </div>
                         </div>
-                        <h2 class="text-4xl md:text-7xl font-black tracking-tight text-brand-blue split-reveal-title">
-                            L'Automatisme au service de <span class="text-brand-accent">l'Innovation.</span>
+                        <h2 class="text-4xl md:text-7xl font-black tracking-tight text-brand-primary split-reveal-title">
+                            L'Automatisme & la GTB au service de <span class="text-brand-accent">la transition énergétique.</span>
                         </h2>
-                        <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl">
-                            Étudiant GEII passionné par l'automatisme, l'électronique embarquée et la conception industrielle.
+                        <p class="text-xl md:text-2xl text-gray-500 font-light max-w-2xl font-body">
+                            Étudiant en BUT GEII passionné par la gestion technique du bâtiment (GTB), l'automatisme industriel et la régulation des systèmes énergétiques au sein du Groupe E2M.
                         </p>
                     </div>
 
                     <div class="flex flex-wrap gap-4">
-                        <a href="#experiences" class="px-6 py-3 bg-brand-blue text-white rounded-brand hover:shadow-xl transition-all font-bold">Voir mon parcours</a>
-                        <div class="flex items-center gap-4 px-4 py-2 text-gray-400 italic text-sm border-l-4 border-brand-accent">
-                            "Curieux, rigoureux et autonome."
+                        <a href="#experiences" class="px-6 py-3 bg-brand-primary text-white rounded-brand hover:shadow-xl transition-all font-bold">Voir mon parcours</a>
+                        <div class="flex items-center gap-4 px-4 py-2 text-gray-400 italic text-sm border-l-4 border-brand-accent font-body">
+                            "Rigueur technique et engagement pour l'intelligence des bâtiments."
                         </div>
                     </div>
                 </section>
@@ -299,49 +320,49 @@
                 <!-- Experiences Section -->
                 <section id="experiences" class="space-y-12">
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-4 border-brand-accent pb-4">
-                        <h2 class="text-3xl md:text-5xl font-black text-brand-blue">Expériences <span class="text-brand-text">Professionnelles</span></h2>
+                        <h2 class="text-3xl md:text-5xl font-black text-brand-primary">Expériences <span class="text-brand-accent">Professionnelles</span></h2>
                     </div>
 
                     <div class="grid gap-6 md:grid-cols-2">
                         <!-- Annet Blanchisserie -->
-                        <div class="glass spotlight-card p-8 space-y-4 hover:border-brand-secondary group">
+                        <div class="glass spotlight-card p-8 space-y-4 hover:border-brand-accent group">
                             <div class="flex justify-between items-start">
-                                <h3 class="text-xl font-black text-brand-blue uppercase group-hover:text-brand-secondary transition-colors font-sans relative z-10">Ouvrier de Production</h3>
-                                <span class="text-xs px-2 py-1 rounded bg-brand-blue text-white font-black relative z-10">2025</span>
+                                <h3 class="text-xl font-black text-brand-primary uppercase group-hover:text-brand-accent transition-colors font-sans relative z-10">Ouvrier de Production</h3>
+                                <span class="text-xs px-2 py-1 rounded bg-brand-primary text-white font-black relative z-10">2025</span>
                             </div>
-                            <p class="text-brand-text font-bold relative z-10">Annet Blanchisserie</p>
-                            <ul class="text-gray-500 space-y-2 text-sm italic font-semibold relative z-10">
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Gestion du flux textile</li>
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Respect des cadences de production</li>
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Normes d'hygiène et de sécurité</li>
+                            <p class="text-brand-primary font-bold relative z-10 font-sans">Annet Blanchisserie</p>
+                            <ul class="text-gray-500 space-y-2 text-sm italic font-semibold relative z-10 font-body">
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Gestion du flux textile industriel</li>
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Respect des cadences de production et coordination</li>
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Application rigoureuse des normes d'hygiène et de sécurité</li>
                             </ul>
                         </div>
 
                         <!-- LIEBHERR -->
-                        <div class="glass spotlight-card p-8 space-y-4 hover:border-brand-secondary group">
+                        <div class="glass spotlight-card p-8 space-y-4 hover:border-brand-accent group">
                             <div class="flex justify-between items-start relative z-10">
-                                <h3 class="text-xl font-black text-brand-blue uppercase group-hover:text-brand-secondary transition-colors font-sans">Agent de Manutention</h3>
-                                <span class="text-xs px-2 py-1 rounded bg-brand-blue text-white font-black">2023</span>
+                                <h3 class="text-xl font-black text-brand-primary uppercase group-hover:text-brand-accent transition-colors font-sans">Agent de Manutention</h3>
+                                <span class="text-xs px-2 py-1 rounded bg-brand-primary text-white font-black">2023</span>
                             </div>
-                            <p class="text-brand-text font-bold relative z-10">LIEBHERR</p>
-                            <ul class="text-gray-500 space-y-2 text-sm italic font-semibold relative z-10">
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Destockage et démontage de structures</li>
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Réorganisation des locaux</li>
+                            <p class="text-brand-primary font-bold relative z-10 font-sans">LIEBHERR Aerospace</p>
+                            <ul class="text-gray-500 space-y-2 text-sm italic font-semibold relative z-10 font-body">
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Destockage et démontage de structures industrielles</li>
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Réorganisation logistique des locaux et rigueur d'exécution</li>
                             </ul>
                         </div>
 
                         <!-- Bénévolat FCPE -->
-                        <div class="glass spotlight-card p-8 space-y-4 hover:border-brand-secondary group md:col-span-2">
+                        <div class="glass spotlight-card p-8 space-y-4 hover:border-brand-accent group md:col-span-2">
                             <div class="flex justify-between items-start relative z-10">
-                                <h3 class="text-xl font-black text-brand-blue uppercase group-hover:text-brand-secondary transition-colors font-sans">Bénévolat</h3>
-                                <span class="text-xs px-2 py-1 rounded bg-brand-blue text-white font-black">2023</span>
+                                <h3 class="text-xl font-black text-brand-primary uppercase group-hover:text-brand-accent transition-colors font-sans">Bénévolat</h3>
+                                <span class="text-xs px-2 py-1 rounded bg-brand-primary text-white font-black">2023</span>
                             </div>
-                            <p class="text-brand-text font-bold relative z-10">FCPE - Lycée A. KASTLER</p>
-                            <ul class="text-gray-500 space-y-2 text-sm grid md:grid-cols-2 gap-x-4 italic font-semibold relative z-10">
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Accueil des élèves</li>
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Préparation des commandes</li>
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Suivi des stocks</li>
-                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Encaissements</li>
+                            <p class="text-brand-primary font-bold relative z-10 font-sans">FCPE - Lycée A. KASTLER</p>
+                            <ul class="text-gray-500 space-y-2 text-sm grid md:grid-cols-2 gap-x-4 italic font-semibold relative z-10 font-body">
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Accueil et orientation des nouveaux élèves</li>
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Préparation des commandes et logistique de rentrée</li>
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Suivi rigoureux des stocks</li>
+                                <li class="flex gap-2"><span class="text-brand-accent font-bold">•</span> Encaissements et gestion de caisse</li>
                             </ul>
                         </div>
                     </div>
@@ -350,30 +371,30 @@
                 <!-- Formations & Projets Section -->
                 <section id="formations" class="space-y-12">
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-4 border-brand-accent pb-4">
-                        <h2 class="text-3xl md:text-5xl font-black text-brand-blue">Projets & <span class="text-brand-text">Réalisations</span></h2>
+                        <h2 class="text-3xl md:text-5xl font-black text-brand-primary">Projets & <span class="text-brand-accent">Réalisations</span></h2>
                     </div>
 
-                    <div class="grid gap-8 md:grid-cols-3">
+                    <div class="grid gap-8 md:grid-cols-3 font-sans">
                         <!-- CalTracker -->
-                        <div class="md:col-span-2 glass spotlight-card p-8 relative overflow-hidden group hover:border-brand-secondary">
-                            <div class="absolute inset-0 bg-brand-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
+                        <div class="md:col-span-2 glass spotlight-card p-8 relative overflow-hidden group hover:border-brand-accent">
+                            <div class="absolute inset-0 bg-brand-accent/5 opacity-0 group-hover:opacity-100 transition-opacity z-0"></div>
                             <div class="relative z-10 flex flex-col md:flex-row gap-8">
-                                <div class="w-full md:w-1/2 aspect-video rounded-brand overflow-hidden border border-gray-100 group-hover:border-brand-blue transition-all">
+                                <div class="w-full md:w-1/2 aspect-video rounded-brand overflow-hidden border border-gray-100 group-hover:border-brand-primary transition-all">
                                     <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2000&auto=format&fit=crop" alt="CalTracker" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                                 </div>
                                 <div class="w-full md:w-1/2 space-y-4">
                                     <div class="flex items-center gap-2">
-                                        <span class="px-2 py-1 rounded bg-brand-blue text-white text-[10px] font-black uppercase">SaaS IA</span>
+                                        <span class="px-2 py-1 rounded bg-brand-primary text-white text-[10px] font-black uppercase">SaaS IA</span>
                                         <span class="text-xs text-gray-400 italic font-bold">2026</span>
                                     </div>
-                                    <h3 class="text-2xl font-black text-brand-blue uppercase">CalTracker</h3>
-                                    <p class="text-sm text-gray-500 leading-relaxed font-semibold italic">
-                                        Dashboard de suivi nutritionnel intelligent (SaaS). Reconnaissance visuelle par IA, scanner de codes-barres et analytique.
+                                    <h3 class="text-2xl font-black text-brand-primary uppercase">CalTracker</h3>
+                                    <p class="text-sm text-gray-500 leading-relaxed font-semibold italic font-body">
+                                        Dashboard de suivi nutritionnel intelligent (SaaS). Reconnaissance visuelle par IA, scanner de codes-barres et analytique "Data-First".
                                     </p>
-                                    <div class="flex flex-wrap gap-2 pt-2">
-                                        <span class="text-[10px] text-brand-blue font-black bg-brand-light px-2 py-1 rounded">Next.js 16</span>
-                                        <span class="text-[10px] text-brand-blue font-black bg-brand-light px-2 py-1 rounded">Vercel AI SDK</span>
-                                        <span class="text-[10px] text-brand-blue font-black bg-brand-light px-2 py-1 rounded">TypeScript</span>
+                                    <div class="flex flex-wrap gap-2 pt-2 font-body">
+                                        <span class="text-[10px] text-brand-primary font-black bg-brand-light px-2 py-1 rounded">Next.js 16</span>
+                                        <span class="text-[10px] text-brand-primary font-black bg-brand-light px-2 py-1 rounded">Vercel AI SDK</span>
+                                        <span class="text-[10px] text-brand-primary font-black bg-brand-light px-2 py-1 rounded">TypeScript</span>
                                     </div>
                                 </div>
                             </div>
@@ -381,34 +402,34 @@
 
                         <!-- Robot Sumo -->
                         <div class="flex flex-col space-y-4 group">
-                            <div class="aspect-square bg-brand-light rounded-brand border border-gray-100 overflow-hidden flex items-center justify-center hover:border-brand-secondary transition-all hover:shadow-xl">
+                            <div class="aspect-square bg-brand-light rounded-brand border border-gray-100 overflow-hidden flex items-center justify-center hover:border-brand-accent transition-all hover:shadow-xl">
                                 <img src="../../data/image robot sumo.png" alt="Robot Sumo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             </div>
                             <div>
-                                <h4 class="font-black text-brand-blue uppercase text-lg group-hover:text-brand-secondary transition-colors">Robot Sumo Autonome</h4>
-                                <p class="text-sm text-gray-500 mt-2 font-semibold italic">Conception mécatronique (Solidworks) & programmation C++.</p>
+                                <h4 class="font-black text-brand-primary uppercase text-lg group-hover:text-brand-accent transition-colors">Robot Sumo Autonome</h4>
+                                <p class="text-sm text-gray-500 mt-2 font-semibold italic font-body">Conception mécatronique (Solidworks) & programmation embarquée C++. Gestion de capteurs d'obstacles et logique de combat autonome.</p>
                             </div>
                         </div>
 
                         <!-- Système Embarqué -->
                         <div class="flex flex-col space-y-4 group">
-                            <div class="aspect-square bg-brand-light rounded-brand border border-gray-100 overflow-hidden flex items-center justify-center hover:border-brand-secondary transition-all hover:shadow-xl">
+                            <div class="aspect-square bg-brand-light rounded-brand border border-gray-100 overflow-hidden flex items-center justify-center hover:border-brand-accent transition-all hover:shadow-xl">
                                 <img src="../../data/thermo.jpg" alt="Thermomètre d'Entreprise" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             </div>
                             <div>
-                                <h4 class="font-black text-brand-blue uppercase text-lg group-hover:text-brand-secondary transition-colors">Thermomètre d'Entreprise</h4>
-                                <p class="text-sm text-gray-400 mt-2 font-semibold italic">Carte électronique : schémas, routage PCB sous Proteus.</p>
+                                <h4 class="font-black text-brand-primary uppercase text-lg group-hover:text-brand-accent transition-colors">Thermomètre Connecté</h4>
+                                <p class="text-sm text-gray-500 mt-2 font-semibold italic font-body">Conception complète de carte électronique de régulation de température. Saisie de schémas, routage PCB sous Proteus ISIS/ARES et soudure de CMS.</p>
                             </div>
                         </div>
 
                         <!-- Casiers RFID -->
                         <div class="flex flex-col space-y-4 group">
-                            <div class="aspect-square bg-brand-light rounded-brand border border-gray-100 overflow-hidden flex items-center justify-center hover:border-brand-secondary transition-all hover:shadow-xl">
+                            <div class="aspect-square bg-brand-light rounded-brand border border-gray-100 overflow-hidden flex items-center justify-center hover:border-brand-accent transition-all hover:shadow-xl">
                                 <img src="../../data/casier.png" alt="Casiers Sécurisés RFID" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                             </div>
                             <div>
-                                <h4 class="font-black text-brand-blue uppercase text-lg group-hover:text-brand-secondary transition-colors">Casiers Sécurisés RFID</h4>
-                                <p class="text-sm text-gray-500 mt-2 font-semibold italic">Système de gestion d'accès par badge. Décodage RFID.</p>
+                                <h4 class="font-black text-brand-primary uppercase text-lg group-hover:text-brand-accent transition-colors">Casiers Sécurisés RFID</h4>
+                                <p class="text-sm text-gray-500 mt-2 font-semibold italic font-body">Système de gestion d'accès automatisé par badges RFID. Programmation de microcontrôleur et prototypage de serrures électriques.</p>
                             </div>
                         </div>
                     </div>
@@ -416,23 +437,23 @@
                     <!-- Maker & Personal -->
                     <div class="glass p-8 mt-12 bg-brand-light/50 border-none">
                         <div class="flex items-center gap-4 mb-6">
-                            <div class="p-3 rounded-brand bg-brand-blue text-white">
+                            <div class="p-3 rounded-brand bg-brand-primary text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
                             </div>
-                            <h3 class="text-2xl font-black text-brand-blue uppercase">Ingénierie Maker & Passion</h3>
+                            <h3 class="text-2xl font-black text-brand-primary uppercase">Ingénierie Maker & Passions</h3>
                         </div>
-                        <div class="grid md:grid-cols-3 gap-8 text-sm">
+                        <div class="grid md:grid-cols-3 gap-8 text-sm font-body">
                             <div class="space-y-2">
-                                <span class="text-brand-blue font-black uppercase text-xs">Domotique & Ambilight</span>
-                                <p class="text-gray-500 font-semibold italic">Rénovation d'installations électriques, optimisation énergétique. Système Ambilight maison.</p>
+                                <span class="text-brand-primary font-black uppercase text-xs">Domotique & Ambilight</span>
+                                <p class="text-gray-500 font-semibold italic">Rénovation d'installations électriques domestiques, intégration de protocoles de gestion de l'énergie et programmation de microcontrôleurs (Système Ambilight soudé maison).</p>
                             </div>
                             <div class="space-y-2">
-                                <span class="text-brand-blue font-black uppercase text-xs">Upcycling Audio</span>
-                                <p class="text-gray-500 font-semibold italic">Rénovation d'enceintes connectées. Menuiserie, Design & Intégration électronique.</p>
+                                <span class="text-brand-primary font-black uppercase text-xs">Upcycling Audio</span>
+                                <p class="text-gray-500 font-semibold italic">Rénovation complète d'enceintes connectées vintages. Travaux de menuiserie, design d'amplificateurs et intégration de cartes électroniques modernes.</p>
                             </div>
                             <div class="space-y-2">
-                                <span class="text-brand-blue font-black uppercase text-xs">Création Artistique</span>
-                                <p class="text-gray-500 font-semibold italic">Composition musicale, dessin technique et contenus multimédias.</p>
+                                <span class="text-brand-primary font-black uppercase text-xs">Dessin & Multimédia</span>
+                                <p class="text-gray-500 font-semibold italic">Dessin technique industriel et modélisation de pièces 3D. Composition musicale assistée par ordinateur et édition multimédia numérique.</p>
                             </div>
                         </div>
                     </div>
@@ -441,26 +462,26 @@
                 <!-- Diplômes Section -->
                 <section id="diplomes" class="space-y-12">
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-4 border-brand-accent pb-4">
-                        <h2 class="text-3xl md:text-5xl font-black text-brand-blue">Diplômes & <span class="text-brand-text">Qualifications</span></h2>
+                        <h2 class="text-3xl md:text-5xl font-black text-brand-primary">Diplômes & <span class="text-brand-accent">Qualifications</span></h2>
                     </div>
 
                     <div class="space-y-6">
-                        <div class="glass p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-brand-secondary transition-all">
+                        <div class="glass p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-brand-accent transition-all">
                             <div>
-                                <h3 class="text-xl font-black text-brand-blue uppercase">BUT Génie Électrique et I.I</h3>
-                                <p class="text-brand-text font-bold">1ère année - Parcours Automatisme et Informatique Industrielle</p>
+                                <h3 class="text-xl font-black text-brand-primary uppercase font-sans">BUT Génie Électrique et Informatique Industrielle</h3>
+                                <p class="text-brand-primary font-semibold font-body">1ère année - Parcours Automatisme et Informatique Industrielle (AII)</p>
                             </div>
-                            <span class="text-sm font-bold text-gray-400 italic">En cours</span>
+                            <span class="text-sm font-bold text-gray-400 italic font-body">En cours de validation</span>
                         </div>
 
-                        <div class="glass p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-brand-secondary transition-all">
+                        <div class="glass p-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-brand-accent transition-all">
                             <div>
-                                <h3 class="text-xl font-black text-brand-blue uppercase">Baccalauréat STI2D</h3>
-                                <p class="text-brand-text font-bold">Sciences et Technologies de l’Industrie</p>
+                                <h3 class="text-xl font-black text-brand-primary uppercase font-sans">Baccalauréat STI2D</h3>
+                                <p class="text-brand-primary font-semibold font-body">Sciences et Technologies de l’Industrie et du Développement Durable</p>
                             </div>
-                            <div class="text-right text-sm">
-                                <span class="block font-black text-brand-blue tracking-tighter">2025</span>
-                                <span class="px-2 py-0.5 rounded bg-brand-blue text-white text-[10px] font-black uppercase">Mention Bien</span>
+                            <div class="text-right text-sm font-body">
+                                <span class="block font-black text-brand-primary tracking-tighter">2025</span>
+                                <span class="px-2 py-0.5 rounded bg-brand-accent text-brand-primary text-[10px] font-black uppercase">Mention Bien</span>
                             </div>
                         </div>
                     </div>
@@ -469,59 +490,59 @@
                 <!-- Competences Section -->
                 <section id="competences" class="space-y-12">
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-4 border-brand-accent pb-4">
-                        <h2 class="text-3xl md:text-5xl font-black text-brand-blue">Expertise <span class="text-brand-text">Technique</span></h2>
+                        <h2 class="text-3xl md:text-5xl font-black text-brand-primary">Expertise <span class="text-brand-accent">Technique</span></h2>
                     </div>
 
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-sans">
                         <div class="glass p-6 flex flex-col items-center justify-center text-center gap-4 hover:bg-brand-light transition-all">
-                            <div class="text-brand-blue font-black text-lg italic uppercase">TIA Portal</div>
-                            <span class="text-[10px] text-gray-400 font-bold uppercase">Automation Siemens</span>
+                            <div class="text-brand-primary font-black text-lg italic uppercase">TIA Portal</div>
+                            <span class="text-[10px] text-gray-400 font-bold uppercase font-body">Automates Siemens & Grafcet</span>
                         </div>
                         <div class="glass p-6 flex flex-col items-center justify-center text-center gap-4 hover:bg-brand-light transition-all">
-                            <div class="text-brand-blue font-black text-lg italic uppercase">Proteus ISIS/ARES</div>
-                            <span class="text-[10px] text-gray-400 font-bold uppercase">Simulation & PCB</span>
+                            <div class="text-brand-primary font-black text-lg italic uppercase font-sans">Proteus ISIS/ARES</div>
+                            <span class="text-[10px] text-gray-400 font-bold uppercase font-body">Simulation & Routage PCB</span>
                         </div>
                         <div class="glass p-6 flex flex-col items-center justify-center text-center gap-4 hover:bg-brand-light transition-all">
-                            <div class="text-brand-blue font-black text-lg italic uppercase">Arduino / RFID</div>
-                            <span class="text-[10px] text-gray-400 font-bold uppercase">Systèmes Embarqués</span>
+                            <div class="text-brand-primary font-black text-lg italic uppercase font-sans">Arduino / RFID</div>
+                            <span class="text-[10px] text-gray-400 font-bold uppercase font-body">C++ & Systèmes Embarqués</span>
                         </div>
                         <div class="glass p-6 flex flex-col items-center justify-center text-center gap-4 hover:bg-brand-light transition-all">
-                            <div class="text-brand-blue font-black text-lg italic uppercase">Solidworks</div>
-                            <span class="text-[10px] text-gray-400 font-bold uppercase">Modélisation 3D</span>
+                            <div class="text-brand-primary font-black text-lg italic uppercase font-sans">Solidworks</div>
+                            <span class="text-[10px] text-gray-400 font-bold uppercase font-body">Modélisation 3D Mécatronique</span>
                         </div>
                     </div>
 
-                    <div class="grid md:grid-cols-3 gap-8 pt-8 font-semibold italic text-gray-500 text-sm">
+                    <div class="grid md:grid-cols-3 gap-8 pt-8 font-semibold italic text-gray-500 text-sm font-body">
                         <div class="space-y-4">
-                            <h4 class="text-brand-blue font-black uppercase flex items-center gap-2 not-italic">
+                            <h4 class="text-brand-primary font-black uppercase flex items-center gap-2 not-italic font-sans">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
-                                Logiciels & Projets
+                                Logiciels & Programmation
                             </h4>
                             <ul class="space-y-2">
-                                <li>• Microsoft Excel (Gantt & Chiffrage)</li>
-                                <li>• Langage C / C++ / Web (Next.js)</li>
-                                <li>• IA & Automatisation industrielle</li>
+                                <li>• Microsoft Excel (Gantt & Chiffrages chantiers)</li>
+                                <li>• Langage C / C++ & Bases Web (Next.js / HTML / CSS)</li>
+                                <li>• Conception assistée et simulation fonctionnelle</li>
                             </ul>
                         </div>
                         <div class="space-y-4">
-                            <h4 class="text-brand-blue font-black uppercase flex items-center gap-2 not-italic">
+                            <h4 class="text-brand-primary font-black uppercase flex items-center gap-2 not-italic font-sans">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                                Savoir-faire Manuel
+                                Savoir-faire Pratique
                             </h4>
                             <ul class="space-y-2">
-                                <li>• Électricité domestique</li>
-                                <li>• Lecture de schémas industriels</li>
-                                <li>• Utilisation d'outillage de bricolage</li>
+                                <li>• Électricité du bâtiment et schémas électriques (WinRelais)</li>
+                                <li>• Lecture rigoureuse de plans et de schémas unifilaires</li>
+                                <li>• Câblage d'armoires et outillage de montage</li>
                             </ul>
                         </div>
                         <div class="space-y-4">
-                            <h4 class="text-brand-blue font-black uppercase flex items-center gap-2 not-italic">
+                            <h4 class="text-brand-primary font-black uppercase flex items-center gap-2 not-italic font-sans">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-accent"><path d="m5 8 6 6 6-6"/><path d="m5 12 6 6 6-6"/></svg>
-                                Langues
+                                Langues & Communication
                             </h4>
                             <ul class="space-y-2">
-                                <li>• Français : Natif</li>
-                                <li>• Anglais : Niveau B2</li>
+                                <li>• Français : Langue Maternelle</li>
+                                <li>• Anglais : Niveau B2 (Technique & Professionnel)</li>
                             </ul>
                         </div>
                     </div>
@@ -530,49 +551,49 @@
                 <!-- Centres d'intérêt Section -->
                 <section id="interets" class="space-y-12">
                     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-4 border-brand-accent pb-4">
-                        <h2 class="text-3xl md:text-5xl font-black text-brand-blue">Centres d'<span class="text-brand-text">Intérêt</span></h2>
+                        <h2 class="text-3xl md:text-5xl font-black text-brand-primary">Centres d'<span class="text-brand-accent">Intérêt</span></h2>
                     </div>
 
-                    <div class="flex flex-wrap gap-4">
-                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-secondary transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                    <div class="flex flex-wrap gap-4 font-sans">
+                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-accent transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" x2="6" y1="1" y2="4"/><line x1="10" x2="10" y1="1" y2="4"/><line x1="14" x2="14" y1="1" y2="4"/></svg>
                             </div>
-                            <span class="font-bold text-brand-text">Pâtisserie & Cuisine</span>
+                            <span class="font-bold text-brand-primary">Pâtisserie & Cuisine</span>
                         </div>
-                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-secondary transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-accent transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
                             </div>
-                            <span class="font-bold text-brand-text">Musique & Création</span>
+                            <span class="font-bold text-brand-primary">Création Musicale (MAO)</span>
                         </div>
-                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-secondary transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-accent transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4 4 4-4 4-4-4Z"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.71-2.16 0-3-.71-.84-2.29-.84-3 0Z"/><path d="m13.48 3.77a2.3 2.3 0 1 1 3.25 3.25L7 16.73c-1.12 1.12-2.73 1.4-3.77.36s-.76-2.65.36-3.77L13.48 3.77Z"/></svg>
                             </div>
-                            <span class="font-bold text-brand-text">Domotique & DIY</span>
+                            <span class="font-bold text-brand-primary">Domotique & DIY Électronique</span>
                         </div>
-                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-secondary transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-accent transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" x2="15" y1="20" y2="20"/><line x1="12" x2="12" y1="4" y2="20"/></svg>
                             </div>
-                            <span class="font-bold text-brand-text">Sport Assidu</span>
+                            <span class="font-bold text-brand-primary">Sport Assidu</span>
                         </div>
-                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-secondary transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-all">
+                        <div class="glass px-6 py-4 flex items-center gap-4 hover:border-brand-accent transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-all">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
                             </div>
-                            <span class="font-bold text-brand-text">Lecture</span>
+                            <span class="font-bold text-brand-primary">Lecture</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- Call to Action -->
                 <section class="py-24 flex flex-col items-center text-center space-y-8 glass border-brand-accent border-4">
-                    <h2 class="text-3xl md:text-5xl font-black text-brand-blue uppercase tracking-tighter">Prêt pour une nouvelle <span class="text-brand-secondary">collaboration ?</span></h2>
-                    <p class="text-gray-500 max-w-lg font-bold">Je suis activement à la recherche d'une alternance pour mettre mes compétences en automatisme au service de Fauché.</p>
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-primary uppercase tracking-tighter">Prêt pour une nouvelle <span class="text-brand-accent">collaboration ?</span></h2>
+                    <p class="text-gray-500 max-w-lg font-bold font-body">Je suis activement à la recherche d'une alternance pour mettre mes compétences en électricité, automatisme et GTB au service du Groupe E2M.</p>
                     <div class="flex justify-center magnetic-wrap">
-                        <button onclick="downloadDocs()" class="shiny-btn px-10 py-4 glass border-brand-blue border-2 text-brand-blue font-black rounded-brand transition-all uppercase tracking-widest flex items-center justify-center cursor-pointer hover:bg-brand-blue hover:text-white">
+                        <button onclick="downloadDocs()" class="shiny-btn px-10 py-4 glass border-brand-primary border-2 text-brand-primary font-black rounded-brand transition-all uppercase tracking-widest flex items-center justify-center cursor-pointer hover:bg-brand-primary hover:text-white font-sans">
                             CV + Lettre de Motivation (PDF)
                         </button>
                     </div>
@@ -581,26 +602,24 @@
         </div>
     </main>
 
-    <footer class="py-12 bg-brand-blue text-white text-center mt-32">
-        <p class="font-black uppercase tracking-widest text-xs">© 2026 Marius Coudurier - Excellence Industrielle & Automatisme pour Fauché</p>
+    <footer class="py-12 bg-brand-primary text-white text-center mt-32">
+        <p class="font-black uppercase tracking-widest text-xs">© 2026 Marius Coudurier - Excellence Technique & Automatisme pour le Groupe E2M</p>
     </footer>
 
     <script>
         function downloadDocs() {
-            // Contournement du blocage de téléchargements multiples :
-            // On télécharge la lettre normalement, et on ouvre le CV dans un nouvel onglet.
-            
-            window.open('../../data/Copie de CV2.pdf', '_blank');
+            // Télécharger la lettre de motivation E2M
+            window.open('../../data/CV (1).pdf', '_blank');
 
             const letterLink = document.createElement('a');
-            letterLink.href = '../../data/Fauché (1)lettre de motivation.pdf';
+            letterLink.href = '../../data/lettre motivation E2M.pdf';
             letterLink.download = 'Lettre_Motivation_Marius_Coudurier.pdf';
             document.body.appendChild(letterLink);
             letterLink.click();
             document.body.removeChild(letterLink);
         }
 
-        const observerOptions = { threshold: 0.1 };
+        const observerOptions = { threshold: 0.15 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -669,11 +688,9 @@
                     const centerX = rect.left + rect.width / 2;
                     const centerY = rect.top + rect.height / 2;
                     
-                    // Calcul distance
                     const distanceX = e.clientX - centerX;
                     const distanceY = e.clientY - centerY;
                     
-                    // Limiter l'intensité
                     const maxMove = 15;
                     const moveX = (distanceX / rect.width) * maxMove;
                     const moveY = (distanceY / rect.height) * maxMove;

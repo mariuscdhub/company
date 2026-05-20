@@ -10,12 +10,13 @@
 - [x] Déclinaison : Version Branded Ineo Equans (Bleu Foncé/Teal Rounded)
 - [x] Déclinaison : Version Branded SMI-AI Equans Digital
 - [x] Déclinaison : Version Branded Fauché
+- [x] Déclinaison : Version Branded E2M
 - [x] Configuration du déploiement (vercel.json, .gitignore)
 - [x] Mise en place du routage des liens courts (/engie, /cgi, etc.)
 - [ ] Déploiement final sur Vercel
 
 ## Current Trajectory
-Personnalisation complète du portfolio pour l'entreprise Fauché.
+Personnalisation complète du portfolio pour l'entreprise E2M.
 
 ## Squad Status
 | Agent | Task | Status |
@@ -23,5 +24,6 @@ Personnalisation complète du portfolio pour l'entreprise Fauché.
 | Antigravity | Personnalisation Ineo | [x] |
 | Antigravity | Personnalisation SMI-AI | [x] |
 | Antigravity | Personnalisation Fauché | [x] |
+| Antigravity | Personnalisation E2M | [x] |
 | Antigravity | Configuration Routage | [x] |
 | User | Déploiement Vercel | [ ] |

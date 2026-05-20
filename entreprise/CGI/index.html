@@ -593,17 +593,14 @@
             // Contournement du blocage de téléchargements multiples :
             // On télécharge la lettre normalement, et on ouvre le CV dans un nouvel onglet.
             
+            window.open('../../data/Copie de CV2.pdf', '_blank');
+
             const letterLink = document.createElement('a');
             letterLink.href = '../../data/CGI lettre de motivations.pdf';
             letterLink.download = 'Lettre_Motivation_Marius_Coudurier.pdf';
             document.body.appendChild(letterLink);
             letterLink.click();
             document.body.removeChild(letterLink);
-
-            // Ouvrir le CV dans un nouvel onglet
-            setTimeout(() => {
-                window.open('../../data/Copie de CV2.pdf', '_blank');
-            }, 200);
         }
 
         const observerOptions = { threshold: 0.1 };

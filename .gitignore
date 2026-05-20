@@ -10,3 +10,5 @@ Thumbs.db
 # Misc
 *.log
 .vscode/
+scratch_*
+
